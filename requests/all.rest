@@ -1,0 +1,10 @@
+GET http://localhost:3001/api/paintings
+
+###
+GET http://localhost:3001/api/paintings/6672f67e7b16f786f68c984a
+
+###
+GET http://localhost:3001/api/paintings/search?query=Peasant
+
+###
+GET http://localhost:3001/api/paintings/filter?location=Nuenen&year=1885
