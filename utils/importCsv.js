@@ -10,12 +10,12 @@
   The script closes the MongoDB connection after the data insertion.
 */
 
-const mongoose = require('mongoose');
-const fs = require('fs');
-const path = require('path');
-const csv = require('csv-parser');
-const Painting = require('../models/painting'); // Adjust the path as needed
-const config = require('./config');
+const mongoose = require("mongoose");
+const fs = require("fs");
+const path = require("path");
+const csv = require("csv-parser");
+const Painting = require("../models/painting"); // Adjust the path as needed
+const config = require("./config");
 
 // Function to import CSV data
 const importCsvData = async () => {
@@ -31,13 +31,13 @@ const importCsvData = async () => {
 
   return new Promise((resolve, reject) => {
     fs.createReadStream(
-      path.join(__dirname, '../data/paintings-data-testing.csv')
+      path.join(__dirname, "../data/paintings-data-testing.csv")
     )
       .pipe(csv())
-      .on('data', (data) => {
+      .on("data", (data) => {
         // Manually remove BOM if it exists
-        if (data['﻿name']) {
-          data.name = data['﻿name'].trim();
+        if (data["﻿name"]) {
+          data.name = data["﻿name"].trim();
         } else {
           data.name = data.name.trim();
         }
@@ -45,25 +45,25 @@ const importCsvData = async () => {
         // Normalize other fields
         data.year = parseInt(data.year.trim(), 10);
         data.made_at = data.made_at.trim();
-        data.size = data.size.replace(/\n/g, ' ').trim();
+        data.size = data.size.replace(/\n/g, " ").trim();
         data.catalog_no = data.catalog_no.trim();
         data.filename = data.filename.trim();
 
         results.push(data);
       })
-      .on('end', async () => {
+      .on("end", async () => {
         try {
           await Painting.deleteMany({}); // Clear current data
           await Painting.insertMany(results); // Insert the testing data
-          console.log('Data successfully loaded into MongoDB');
+          console.log("Data successfully loaded into MongoDB");
           resolve(); // Resolve the promise once data is successfully inserted
         } catch (error) {
-          console.error('Error inserting data into MongoDB', error);
+          console.error("Error inserting data into MongoDB", error);
           reject(error); // Reject the promise in case of error
         }
       })
-      .on('error', (error) => {
-        console.error('Error reading CSV file', error);
+      .on("error", (error) => {
+        console.error("Error reading CSV file", error);
         reject(error); // Reject the promise in case of CSV reading error
       });
   });
