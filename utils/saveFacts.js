@@ -7,7 +7,7 @@
     The script closes the MongoDB connection after the data insertion.
 */
 const mongoose = require("mongoose");
-const Fact = require("../models/Fact");
+const Fact = require("../models/fact");
 const config = require("./config");
 
 const facts = [
