@@ -33,8 +33,6 @@ const InteractiveMap = () => {
     return <p>Error: {error.message}</p>;
   }
 
-  console.log(data);
-
   const handleMarkerHover = (event, marker) => {
     setTooltipContent(`${marker.name}: ${marker.description}`);
     setTooltipPosition({ x: event.clientX, y: event.clientY });

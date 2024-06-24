@@ -16,4 +16,7 @@ export const getRandomFact = () =>
 export const getColors = () =>
   axios.get(`${baseUrlColors}`).then((res) => res.data);
 
-export const getMapData = () => axios.get("").then((res) => res.data);
+export const getMapData = () =>
+  axios
+    .get("https://raw.githubusercontent.com/reeucq/vanity/main/data/map.json")
+    .then((res) => res.data);
