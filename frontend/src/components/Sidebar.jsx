@@ -2,6 +2,7 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import YearList from "./YearList";
 import LocationList from "./LocationList";
+import QuoteOfTheDay from "./QuoteOfTheDay";
 import Timeline from "./Timeline";
 
 const Sidebar = ({ className }) => {
@@ -15,6 +16,7 @@ const Sidebar = ({ className }) => {
       </Button>
       <LocationList />
       <YearList />
+      <QuoteOfTheDay />
       <Timeline />
     </aside>
   );

@@ -13,6 +13,7 @@ const middleware = require("./utils/middleware");
 const paintingRouter = require("./controllers/paintings");
 const factRouter = require("./controllers/facts");
 const colorRouter = require("./controllers/colors");
+const quoteRouter = require("./controllers/quotes");
 const helmet = require("helmet");
 require("express-async-errors");
 
@@ -37,6 +38,7 @@ app.use(middleware.morgan); // Log requests to the console
 app.use("/api/paintings", paintingRouter); // Mount the paintingRouter on /api/paintings
 app.use("/api/facts", factRouter); // Mount the factRouter on /api/facts
 app.use("/api/colors", colorRouter); // Mount the colorRouter on /api/colors
+app.use("/api/quotes", quoteRouter); // Mount the quoteRouter on /api/quotes
 
 app.use(middleware.unknownEndpoint); // Handle unknown endpoints
 app.use(middleware.errorHandler); // Handle errors
