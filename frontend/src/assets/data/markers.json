@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Brussels",
+    "coordinates": [4.3572, 50.8476],
+    "description": "1878, 1880-81"
+  },
+  {
+    "name": "Borinage (Cuesmes and Wasmes)",
+    "coordinates": [3.83333, 50.4333316],
+    "description": "1879-80"
+  },
+  {
+    "name": "Antwerp",
+    "coordinates": [4.40346, 51.21989],
+    "description": "1885-86"
+  },
+  {
+    "name": "London",
+    "coordinates": [-0.123166, 51.504331316],
+    "description": "1873-75"
+  },
+  {
+    "name": "Isleworth",
+    "coordinates": [-0.34246, 51.47518],
+    "description": "1876"
+  },
+  {
+    "name": "Ramsgate",
+    "coordinates": [1.41797, 51.33568],
+    "description": "1876"
+  },
+  {
+    "name": "Paris",
+    "coordinates": [2.3488, 48.85341],
+    "description": "1874-75, 1876, 1886-88"
+  },
+  {
+    "name": "Arles",
+    "coordinates": [4.63031, 43.67681],
+    "description": "1888-89"
+  },
+  {
+    "name": "Saint-Rémy-de-Provence",
+    "coordinates": [4.83167, 43.78848],
+    "description": "1889-90"
+  },
+  {
+    "name": "Auvers-sur-Oise",
+    "coordinates": [2.16978, 49.07158],
+    "description": "1890"
+  },
+  {
+    "name": "Zundert",
+    "coordinates": [4.65556, 51.47167],
+    "description": "1853-64 and 1868-69"
+  },
+  {
+    "name": "Zevenbergen",
+    "coordinates": [4.593164294, 51.640497438],
+    "description": "1864-66"
+  },
+  {
+    "name": "Tilburg",
+    "coordinates": [5.0913, 51.55551],
+    "description": "1866-68"
+  },
+  {
+    "name": "The Hague",
+    "coordinates": [4.3129, 52.0706],
+    "description": "1869-73, 1881-83"
+  },
+  {
+    "name": "Helvoirt",
+    "coordinates": [5.2333324, 51.6333308],
+    "description": "1874"
+  },
+  {
+    "name": "Dordrecht",
+    "coordinates": [4.67361, 51.81],
+    "description": "1877"
+  },
+  {
+    "name": "Amsterdam",
+    "coordinates": [4.88969, 52.37403],
+    "description": "1877-78"
+  },
+  {
+    "name": "Etten",
+    "coordinates": [6.335165326, 51.916663],
+    "description": "1881"
+  },
+  {
+    "name": "Drenthe",
+    "coordinates": [6.58333, 52.83333],
+    "description": "1883"
+  },
+  {
+    "name": "Nuenen",
+    "coordinates": [5.5499978, 51.4666648],
+    "description": "1883-85"
+  }
+]
