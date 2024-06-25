@@ -8,6 +8,6 @@ const app = require('./app');
 const logger = require('./utils/logger');
 
 // Start the server
-app.listen(config.PORT, () => {
+app.listen(process.env.PORT, () => {
   logger.info(`server running on PORT ${config.PORT}`);
 });
