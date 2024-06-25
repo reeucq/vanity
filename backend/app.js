@@ -32,8 +32,17 @@ mongoose
 
 app.use(cors()); // Enable CORS for all routes, which allows requests from any origin
 app.use(helmet()); // Add security headers to responses, which helps prevent common security vulnerabilities
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      connectSrc: ["'self'", "https://raw.githubusercontent.com"],
+    },
+  })
+);
 app.use(express.json()); // Parse incoming JSON payloads
 app.use(middleware.morgan); // Log requests to the console
+app.use(express.static("dist")); // servs dist folder as frontend
 
 app.use("/api/paintings", paintingRouter); // Mount the paintingRouter on /api/paintings
 app.use("/api/facts", factRouter); // Mount the factRouter on /api/facts

@@ -8,7 +8,8 @@ import {
   CardTitle,
   CardFooter,
 } from "./ui/card";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
+import { ExternalLinkIcon } from "lucide-react";
 
 const SearchView = ({ className }) => {
   const [searchParams] = useSearchParams();
@@ -63,7 +64,10 @@ const SearchView = ({ className }) => {
             </div>
             <CardHeader className="flex-grow">
               <CardTitle className="text-lg font-semibold">
-                {painting.name}
+                {painting.name}{" "}
+                <Link to={`/painting/${painting.id}`}>
+                  <ExternalLinkIcon size={18} className="inline-block" />
+                </Link>
               </CardTitle>
               <CardDescription className="text-sm text-gray-600">
                 {painting.year} | {painting.made_at} <br /> {painting.size}

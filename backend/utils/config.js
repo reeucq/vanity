@@ -5,6 +5,7 @@
 require('dotenv').config();
 
 const PORT = process.env.PORT;
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 const MONGODB_URI =
   process.env.NODE_ENV === 'test'
@@ -14,4 +15,5 @@ const MONGODB_URI =
 module.exports = {
   PORT,
   MONGODB_URI,
+  GEMINI_API_KEY
 };

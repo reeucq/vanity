@@ -5,6 +5,14 @@ const baseUrlFacts = "/api/facts";
 const baseUrlColors = "/api/colors";
 const baseUrlQuotes = "/api/quotes";
 
+export const getPainting = (id) =>
+  axios.get(`${baseUrlPainting}/${id}`).then((res) => res.data);
+
+export const generateAIDescription = (id) =>
+  axios
+    .post(`${baseUrlPainting}/${id}/generate-description`)
+    .then((res) => res.data);
+
 export const filterPaintings = (location, year) =>
   axios
     .get(`${baseUrlPainting}/filter?location=${location}&year=${year}`)

@@ -6,8 +6,9 @@ import HomePage from "./components/HomePage";
 import Sidebar from "./components/Sidebar";
 import PaintingsView from "./components/PaintingsView";
 import SearchView from "./components/SearchView";
+import SinglePaintingView from "./components/SinglePaintingView";
 
-function App() {
+const App = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -35,12 +36,18 @@ function App() {
               <SearchView className="flex-grow order-1 md:order-2 px-3" />
             }
           />
+          <Route
+            path="/painting/:id"
+            element={
+              <SinglePaintingView className="flex-grow order-1 md:order-2 px-3" />
+            }
+          />
         </Routes>
         <Sidebar className="w-full md:w-80 p-3 border-t md:border-t-0 md:border-r order-last md:order-first" />
       </div>
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

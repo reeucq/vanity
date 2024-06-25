@@ -6,10 +6,12 @@ This project is a hobby project that I started after completing Full Stack Open 
 
 ## Features
 
-- Van Gogh Paintings and their details (Status: In Progress :construction:)
+- Van Gogh Paintings and their details (Status: Completed :white_check_mark:)
 - Facts about Van Gogh (Status: Completed :white_check_mark:)
-- Search and Filter functionality (Status: In Progress :construction:)
-- Charts and Visualizations that provide some cool insights about Van Gogh's (Status: In Progress :construction:)
+- Search and Filter functionality (Status: Completed :white_check_mark:)
+- Charts and Visualizations that provide some cool insights about Van Gogh's (Status: Completed :white_check_mark:)
+- Interactive Map (Status: Completed :white_check_mark:)
+- AI Description for all Paintings (Status: Completed :white_check_mark:)
 
 ## Libraries Used
 

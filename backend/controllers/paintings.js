@@ -6,6 +6,10 @@
 */
 const paintingRouter = require("express").Router();
 const Painting = require("../models/painting");
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+const path = require("path");
+const fs = require("fs").promises;
+const config = require("../utils/config");
 
 // Get all paintings
 paintingRouter.get("/", async (req, res) => {
@@ -112,6 +116,39 @@ paintingRouter.get("/:id", async (req, res) => {
     res.json(painting);
   } else {
     res.status(404).end();
+  }
+});
+
+// Generate AI description for a painting
+paintingRouter.post("/:id/generate-description", async (req, res) => {
+  try {
+    const painting = await Painting.findById(req.params.id);
+    if (!painting) {
+      return res.status(404).json({ error: "Painting not found" });
+    }
+
+    const genAI = new GoogleGenerativeAI(config.GEMINI_API_KEY);
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+    const imagePath = `dist/paintings/${painting.filename}`;
+    const imageData = await fs.readFile(imagePath);
+    const imagePart = {
+      inlineData: {
+        data: imageData.toString("base64"),
+        mimeType: "image/jpeg", // Adjust this based on your image format
+      },
+    };
+
+    const prompt = `Describe this painting by Vincent van Gogh. Include details about the subject matter, colors, brushstrokes, and any notable characteristics of Van Gogh's style visible in this work.`;
+
+    const result = await model.generateContent([prompt, imagePart]);
+    const response = await result.response;
+    const description = response.text();
+
+    res.json({ description });
+  } catch (error) {
+    console.error("Error generating AI description:", error);
+    res.status(500).json({ error: "Failed to generate AI description" });
   }
 });
 
