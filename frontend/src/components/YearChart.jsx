@@ -32,6 +32,7 @@ const YearChart = () => {
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ["yearsAndCount"],
     queryFn: getYearsAndCount,
+    retry: 3,
   });
 
   if (isLoading) {

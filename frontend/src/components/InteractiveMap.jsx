@@ -23,6 +23,7 @@ const InteractiveMap = () => {
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ["topojson"],
     queryFn: getMapData,
+    retry: 3,
   });
 
   if (isLoading) {

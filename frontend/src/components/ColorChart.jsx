@@ -32,6 +32,7 @@ const ColorChart = () => {
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ["colorData"],
     queryFn: getColors,
+    retry: 3,
   });
 
   if (isLoading) {

@@ -5,6 +5,7 @@ const FactOfTheDay = () => {
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ["fotd"],
     queryFn: getRandomFact,
+    retry: 3,
   });
 
   if (isLoading) {

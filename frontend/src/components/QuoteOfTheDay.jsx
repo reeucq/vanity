@@ -5,6 +5,7 @@ const QuoteOfTheDay = () => {
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ["qotd"],
     queryFn: getRandomQuote,
+    retry: 3,
   });
 
   if (isLoading) {

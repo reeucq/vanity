@@ -19,6 +19,7 @@ const LocationChart = () => {
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ["locationsAndCount"],
     queryFn: getLocationsAndCount,
+    retry: 3,
   });
 
   if (isLoading) {

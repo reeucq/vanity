@@ -5,7 +5,7 @@ import ColorChart from "./ColorChart";
 import CarouselView from "./CarouselView";
 import InteractiveMap from "./InteractiveMap";
 
-const MainContent = ({ className }) => {
+const HomePage = ({ className }) => {
   return (
     <main className={`w-full mx-auto p-3 ${className}`}>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -32,4 +32,4 @@ const MainContent = ({ className }) => {
   );
 };
 
-export default MainContent;
+export default HomePage;
